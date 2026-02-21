@@ -429,6 +429,10 @@ function getCategoryLabel(category) {
         'cloud': 'Cloud & DevOps',
         'ai-ml': 'AI & ML',
         'music-creative': 'Music & Creative',
+        'social-humanities': 'Social Sciences',
+        'pure-sciences': 'Pure Sciences',
+        'mathematics-logic': 'Mathematics',
+        'liberal-arts': 'Liberal Arts',
         'mobile': 'Mobile Dev',
         'security': 'Cybersecurity'
     };
