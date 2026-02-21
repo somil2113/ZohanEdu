@@ -59,8 +59,8 @@
 
         .sidebar {
             width: 280px;
-            background: var(--bg-card);
-            border-right: 1px solid var(--border-color);
+            background: var(--bg-mint-light);
+            border-right: 1px solid var(--accent-mint);
             padding: 20px 0;
             position: fixed;
             left: 0;
@@ -68,6 +68,7 @@
             height: calc(100vh - 64px);
             overflow-y: auto;
             z-index: 100;
+            box-shadow: 4px 0 20px rgba(79, 209, 197, 0.12);
         }
 
         .user-profile {
@@ -82,17 +83,18 @@
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            background: linear-gradient(135deg, var(--primary-mint), var(--primary-mint-dark));
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--bg-darkest);
+            color: var(--white);
             font-weight: 700;
             font-size: 1.5rem;
+            box-shadow: 0 4px 12px rgba(79, 209, 197, 0.35);
         }
 
         .user-info h3 {
-            color: var(--text-primary);
+            color: var(--text-main);
             margin: 0 0 5px 0;
             font-size: 0.95rem;
         }
@@ -120,11 +122,31 @@
             border-left: 3px solid transparent;
         }
 
-        .sidebar-menu li a:hover,
+        .sidebar-menu li a i {
+            font-size: 1.3rem;
+            min-width: 24px;
+            transition: color 0.3s ease;
+        }
+
+        .sidebar-menu li a:hover {
+            color: var(--primary-mint-dark);
+            background: var(--white);
+            border-left-color: var(--primary-mint);
+        }
+
+        .sidebar-menu li a:hover i {
+            color: var(--primary-mint);
+        }
+
         .sidebar-menu li a.active {
-            color: var(--primary-color);
-            background: rgba(255, 215, 0, 0.05);
-            border-left-color: var(--primary-color);
+            color: var(--primary-mint-dark);
+            background: var(--white);
+            border-left-color: var(--primary-mint);
+            font-weight: 600;
+        }
+
+        .sidebar-menu li a.active i {
+            color: var(--primary-mint);
         }
 
 
@@ -144,8 +166,12 @@
 
         .header h1 {
             font-size: 2.2rem;
-            color: var(--text-primary);
+            color: var(--text-main);
             margin: 0;
+            background: linear-gradient(135deg, var(--primary-mint), var(--primary-mint-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .stats-grid {
@@ -156,13 +182,20 @@
         }
 
         .stat-card {
-            background: var(--bg-card);
-            border: 1px solid rgba(255, 215, 0, 0.1);
+            background: var(--white);
+            border: 1px solid var(--accent-mint);
             border-radius: 15px;
             padding: 25px;
+            text-align: center;
+            transition: box-shadow 0.3s ease;
         }
 
-        .stat-label {
+        .stat-card:hover {
+            box-shadow: 0 8px 24px rgba(79, 209, 197, 0.15);
+        }
+
+        .stat-label,
+        .stat-card h3 {
             color: var(--text-secondary);
             margin: 0 0 10px 0;
             font-size: 0.95rem;
@@ -170,7 +203,7 @@
         }
 
         .stat-value {
-            color: var(--primary-color);
+            color: var(--primary-mint-dark);
             font-size: 2.5rem;
             font-weight: 700;
             margin: 0;
@@ -203,7 +236,7 @@
         }
 
         .tab-btn.active {
-            color: var(--primary-color);
+            color: var(--primary-mint-dark);
         }
 
         .tab-btn.active::after {
@@ -213,7 +246,7 @@
             left: 0;
             right: 0;
             height: 2px;
-            background: var(--primary-color);
+            background: var(--primary-mint);
         }
 
         .tab-content {
@@ -232,15 +265,15 @@
         }
 
         .section-header h2 {
-            color: var(--text-primary);
+            color: var(--text-main);
             margin: 0;
             font-size: 1.5rem;
         }
 
         .btn-add {
             padding: 10px 20px;
-            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-            color: var(--bg-darkest);
+            background: linear-gradient(135deg, var(--primary-mint), var(--primary-mint-dark));
+            color: var(--white);
             border: none;
             border-radius: 8px;
             cursor: pointer;
@@ -250,14 +283,19 @@
 
         .btn-add:hover {
             transform: translateY(-2px);
-            box-shadow: 0 12px 24px rgba(255, 215, 0, 0.3);
+            box-shadow: 0 12px 24px rgba(79, 209, 197, 0.35);
         }
 
         .table-container {
-            background: var(--bg-card);
-            border: 1px solid rgba(255, 215, 0, 0.1);
+            background: var(--white);
+            border: 1px solid var(--accent-mint);
             border-radius: 15px;
             overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .table-container:hover {
+            box-shadow: 0 8px 24px rgba(79, 209, 197, 0.12);
         }
 
         table {
@@ -266,22 +304,22 @@
         }
 
         th {
-            background: var(--bg-dark);
-            color: var(--text-primary);
+            background: var(--bg-mint-light);
+            color: var(--text-main);
             padding: 15px;
             text-align: left;
             font-weight: 600;
-            border-bottom: 2px solid rgba(255, 215, 0, 0.1);
+            border-bottom: 2px solid var(--accent-mint);
         }
 
         td {
             padding: 15px;
             color: var(--text-secondary);
-            border-bottom: 1px solid rgba(255, 215, 0, 0.05);
+            border-bottom: 1px solid var(--accent-mint);
         }
 
         tr:hover {
-            background: rgba(255, 215, 0, 0.02);
+            background: rgba(79, 209, 197, 0.06);
         }
 
         .status-badge {
@@ -293,8 +331,8 @@
         }
 
         .status-active {
-            background: rgba(30, 144, 255, 0.2);
-            color: #1E90FF;
+            background: rgba(79, 209, 197, 0.2);
+            color: var(--primary-mint-dark);
         }
 
         .status-inactive {
@@ -319,12 +357,12 @@
         }
 
         .btn-edit {
-            background: rgba(30, 144, 255, 0.2);
-            color: #1E90FF;
+            background: rgba(79, 209, 197, 0.2);
+            color: var(--primary-mint-dark);
         }
 
         .btn-edit:hover {
-            background: rgba(30, 144, 255, 0.3);
+            background: rgba(79, 209, 197, 0.35);
         }
 
         .btn-delete {
@@ -354,14 +392,15 @@
         }
 
         .modal-content {
-            background: var(--bg-card);
-            border: 1px solid rgba(255, 215, 0, 0.1);
+            background: var(--white);
+            border: 1px solid var(--accent-mint);
             border-radius: 15px;
             padding: 30px;
             max-width: 500px;
             width: 90%;
             max-height: 90vh;
             overflow-y: auto;
+            box-shadow: 0 12px 40px rgba(79, 209, 197, 0.2);
         }
 
         .modal-header {
@@ -372,7 +411,7 @@
         }
 
         .modal-header h2 {
-            color: var(--text-primary);
+            color: var(--text-main);
             margin: 0;
         }
 
@@ -386,7 +425,7 @@
         }
 
         .modal-close:hover {
-            color: var(--primary-color);
+            color: var(--primary-mint-dark);
         }
 
         .form-group {
@@ -396,7 +435,7 @@
         .form-group label {
             display: block;
             margin-bottom: 8px;
-            color: var(--text-primary);
+            color: var(--text-main);
             font-weight: 600;
         }
 
@@ -405,10 +444,10 @@
         .form-group select {
             width: 100%;
             padding: 10px 15px;
-            background: var(--bg-dark);
-            border: 1px solid rgba(255, 215, 0, 0.2);
+            background: var(--bg-mint-light);
+            border: 1px solid var(--accent-mint);
             border-radius: 8px;
-            color: var(--text-primary);
+            color: var(--text-main);
             font-size: 1rem;
             transition: all 0.3s ease;
         }
@@ -422,15 +461,15 @@
         .form-group textarea:focus,
         .form-group select:focus {
             outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+            border-color: var(--primary-mint);
+            box-shadow: 0 0 0 2px rgba(79, 209, 197, 0.25);
         }
 
         .btn-primary {
             width: 100%;
             padding: 12px;
-            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-            color: var(--bg-darkest);
+            background: linear-gradient(135deg, var(--primary-mint), var(--primary-mint-dark));
+            color: var(--white);
             border: none;
             border-radius: 8px;
             cursor: pointer;
@@ -440,7 +479,7 @@
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 12px 24px rgba(255, 215, 0, 0.3);
+            box-shadow: 0 12px 24px rgba(79, 209, 197, 0.35);
         }
 
         .empty-state {
@@ -533,7 +572,7 @@
             <div class="header">
                 <div>
                     <h1>Admin Dashboard</h1>
-                    <p style="color: var(--text-tertiary); margin: 5px 0 0 0;">Welcome back, Admin</p>
+                    <p style="color: var(--text-tertiary); margin: 5px 0 0 0;">Welcome back</p>
                 </div>
             </div>
 
@@ -635,8 +674,8 @@
 
             <!-- Settings Tab -->
             <div id="settings" class="tab-content">
-                <div style="background: var(--bg-card); padding: 30px; border-radius: 15px; border: 1px solid rgba(255, 215, 0, 0.1);">
-                    <h2 style="color: var(--text-primary); margin-bottom: 30px;">Admin Settings</h2>
+                <div style="background: var(--white); padding: 30px; border-radius: 15px; border: 1px solid var(--accent-mint);">
+                    <h2 style="color: var(--text-main); margin-bottom: 30px;">Admin Settings</h2>
                     
                     <div class="form-group">
                         <label>Full Name</label>
