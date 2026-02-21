@@ -116,7 +116,7 @@ function logoutUser() {
     localStorage.removeItem('selectedCourse');
     localStorage.removeItem('cart');
     localStorage.removeItem('checkoutItems');
-    window.location.href = 'index.html';
+    window.location.href = '/';
 }
 
 async function fetchUserProfile() {

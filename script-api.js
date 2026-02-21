@@ -389,7 +389,7 @@ function createCourseCard(course) {
         </div>
     `;
     card.addEventListener('click', function() {
-        window.location.href = `course-details.html?id=${course._id}`;
+        window.location.href = `/course-details?id=${course._id}`;
     });
     return card;
 }
@@ -573,7 +573,7 @@ function closeModal() {
 async function buyNow(courseId) {
     if (!isUserLoggedIn()) {
         if (confirm('You need to login to purchase courses. Redirect to login?')) {
-            window.location.href = 'login.html';
+            window.location.href = '/login';
         }
         return;
     }
@@ -586,7 +586,7 @@ async function buyNow(courseId) {
         title: course.title,
         price: course.price
     }));
-    window.location.href = 'checkout.html';
+    window.location.href = '/checkout';
 }
 
 // Main logic to initialize pages

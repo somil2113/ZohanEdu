@@ -11,7 +11,7 @@
     <nav class="navbar">
         <div class="container">
             <div class="nav-wrapper">
-                <a href="index.html" class="logo">
+                <a href="/" class="logo">
                     <img src="images/logo.jpeg" alt="ZOHANEDU">
                 </a>
                 
@@ -25,7 +25,7 @@
                     <li><a href="#courses">Courses</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="checkout.html" style="color: var(--primary-color); font-weight: bold;">🛒 Cart</a></li>
+                    <li><a href="/checkout" style="color: var(--primary-color); font-weight: bold;">🛒 Cart</a></li>
                     <li id="authLink"></li>
                 </ul>
                 <button class="hamburger" id="hamburger">☰</button>
@@ -67,7 +67,7 @@
             </div>
 
             <div style="text-align: center; margin-top: 3rem;">
-                <a href="checkout.html" class="btn btn-primary" style="text-decoration: none;">View Cart</a>
+                <a href="/checkout" class="btn btn-primary" style="text-decoration: none;">View Cart</a>
             </div>
         </div>
     </section>
@@ -131,10 +131,10 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#courses">Courses</a></li>
                         <li><a href="#about">About Us</a></li>
-                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="return-refund-policy.html">Return & Refund Policy</a></li>
-                        <li><a href="terms-conditions.html">Terms & Conditions</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/return-refund-policy">Return & Refund Policy</a></li>
+                        <li><a href="/terms-conditions">Terms & Conditions</a></li>
+                        <li><a href="/contact">Contact</a></li>
                     </ul>
                 </div>
 
@@ -239,13 +239,13 @@
 
             if (currentUser) {
                 authLink.innerHTML = `
-                    <a href="${currentUser.role === 'admin' ? 'admin-dashboard.html' : 'user-dashboard.html'}" 
+                    <a href="${currentUser.role === 'admin' ? '/admin-dashboard' : '/user-dashboard'}" 
                        style="color: var(--primary-color); font-weight: bold;">
                         👤 ${currentUser.name}
                     </a>
                 `;
             } else {
-                authLink.innerHTML = `<a href="login.html" style="color: var(--primary-color); font-weight: bold;">Login</a>`;
+                authLink.innerHTML = `<a href="/login" style="color: var(--primary-color); font-weight: bold;">Login</a>`;
             }
 
             // Fetch and display courses from API

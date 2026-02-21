@@ -355,15 +355,15 @@
     <nav class="navbar">
         <div class="container">
             <div class="nav-wrapper">
-                <a href="index.html" class="logo">
+                <a href="/" class="logo">
                     <img src="images/logo.jpeg" alt="ZOHANEDU">
                 </a>
                 <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#courses">Courses</a></li>
-                    <li><a href="index.html#about">About</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
-                    <li><a href="checkout.html" style="color: var(--primary-color); font-weight: bold;">🛒 Cart</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/#courses">Courses</a></li>
+                    <li><a href="/#about">About</a></li>
+                    <li><a href="/#contact">Contact</a></li>
+                    <li><a href="/checkout" style="color: var(--primary-color); font-weight: bold;">🛒 Cart</a></li>
                 </ul>
                 <button class="hamburger" id="hamburger">☰</button>
             </div>
@@ -565,13 +565,13 @@
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="index.html#courses">Courses</a></li>
-                        <li><a href="index.html#about">About Us</a></li>
-                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="return-refund-policy.html">Return & Refund Policy</a></li>
-                        <li><a href="terms-conditions.html">Terms & Conditions</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/#courses">Courses</a></li>
+                        <li><a href="/#about">About Us</a></li>
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/return-refund-policy">Return & Refund Policy</a></li>
+                        <li><a href="/terms-conditions">Terms & Conditions</a></li>
+                        <li><a href="/contact">Contact</a></li>
                     </ul>
                 </div>
 
@@ -680,7 +680,7 @@
 
         function showEmptyCart() {
             const itemsContainer = document.getElementById('cartItemsContainer');
-            itemsContainer.innerHTML = '<div class="empty-cart"><p>📭 Your cart is empty</p><p style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 1rem;">Please add items to your cart before checkout</p><a href="index.html" class="btn btn-primary" style="display: inline-block;">Continue Shopping</a></div>';
+            itemsContainer.innerHTML = '<div class="empty-cart"><p>📭 Your cart is empty</p><p style="font-size: 0.95rem; color: var(--secondary-color); margin-bottom: 1rem;">Please add items to your cart before checkout</p><a href="/" class="btn btn-primary" style="display: inline-block;">Continue Shopping</a></div>';
             document.getElementById('completeCheckoutBtn').disabled = true;
             
             // Hide price section when cart is empty
@@ -787,7 +787,7 @@
             // Check if user is logged in
             const currentUser = getCurrentUser(); // using script-api helper
             if (!currentUser) {
-                showCheckoutMessage('You need to log in to complete your purchase. <a href="login.html" style="color: var(--primary-mint-dark); font-weight: 600;">Go to Login</a>', 'error');
+                showCheckoutMessage('You need to log in to complete your purchase. <a href="/login" style="color: var(--primary-mint-dark); font-weight: 600;">Go to Login</a>', 'error');
                 return;
             }
 
@@ -883,7 +883,7 @@
 
                     // Redirect to user dashboard
                     setTimeout(() => {
-                        window.location.href = 'user-dashboard.html';
+                        window.location.href = '/user-dashboard';
                     }, 2000);
                 } else {
                     showCheckoutMessage('We couldn\'t place your order. Please try again.', 'error');
@@ -891,7 +891,7 @@
 
             } catch (error) {
                 console.error('Checkout error:', error);
-                showCheckoutMessage('Payment page is under process. Please <a href="contact.html" style="color: var(--primary-mint-dark); font-weight: 600;">contact us</a> to complete your purchase.', 'info');
+                showCheckoutMessage('Payment page is under process. Please <a href="/contact" style="color: var(--primary-mint-dark); font-weight: 600;">contact us</a> to complete your purchase.', 'info');
             } finally {
                 checkoutBtn.innerText = originalText;
                 checkoutBtn.disabled = false;

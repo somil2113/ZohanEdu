@@ -502,7 +502,7 @@
 <body>
     <!-- Top Navbar -->
     <nav class="dashboard-navbar">
-        <a href="index.html" class="logo">
+        <a href="/" class="logo">
             <img src="images/logo.jpeg" alt="ZOHANEDU">
         </a>
         <button class="btn-logout" onclick="handleLogout()">Logout</button>
@@ -704,12 +704,12 @@
         function checkAuth() {
             const currentUser = localStorage.getItem('currentUser');
             if (!currentUser) {
-                window.location.href = 'login.html';
+                window.location.href = '/login';
                 return;
             }
             const user = JSON.parse(currentUser);
             if (user.role !== 'admin') {
-                window.location.href = 'user-dashboard.html';
+                window.location.href = '/user-dashboard';
                 return;
             }
             return user;
@@ -882,7 +882,7 @@
 
         function handleLogout() {
             localStorage.removeItem('currentUser');
-            window.location.href = 'login.html';
+            window.location.href = '/login';
         }
 
         // Close modal when clicking outside

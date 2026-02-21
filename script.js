@@ -190,7 +190,7 @@ function createCourseCard(course) {
     `;
     // Navigate to course details on card click
     card.addEventListener('click', function() {
-        window.location.href = `course-details.html?id=${course.id}`;
+        window.location.href = `/course-details?id=${course.id}`;
     });
     return card;
 }
@@ -352,7 +352,7 @@ function buyNow(courseId) {
     // Check if user is logged in
     if (!isUserLoggedIn()) {
         if (confirm('You need to login to purchase courses. Redirect to login?')) {
-            window.location.href = 'login.html';
+            window.location.href = '/login';
         }
         return;
     }
@@ -365,7 +365,7 @@ function buyNow(courseId) {
         title: course.title,
         price: course.price
     }));
-    window.location.href = 'checkout.html';
+    window.location.href = '/checkout';
 }
 
 // Smooth scrolling for navigation links

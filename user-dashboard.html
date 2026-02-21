@@ -479,7 +479,7 @@
 <body>
     <!-- Top Navbar -->
     <nav class="dashboard-navbar">
-        <a href="index.html" class="logo">
+        <a href="/" class="logo">
             <img src="images/logo.jpeg" alt="ZOHANEDU">
         </a>
         <button class="btn-logout" onclick="handleLogout()">Logout</button>
@@ -599,7 +599,7 @@
         function checkAuth() {
             const currentUser = localStorage.getItem('currentUser');
             if (!currentUser) {
-                window.location.href = 'login.html';
+                window.location.href = '/login';
                 return;
             }
             return JSON.parse(currentUser);
@@ -671,7 +671,7 @@
                         <div class="empty-state-icon">📚</div>
                         <h2>No Courses Yet</h2>
                         <p>Start your learning journey today!</p>
-                        <a href="index.html" class="btn-primary">Browse Courses</a>
+                        <a href="/" class="btn-primary">Browse Courses</a>
                     </div>
                 `;
             }
@@ -729,7 +729,7 @@
                         <div class="empty-state-icon">📚</div>
                         <h2>No Enrolled Courses</h2>
                         <p>Explore our course catalog and start learning!</p>
-                        <a href="index.html" class="btn-primary">Browse Courses</a>
+                        <a href="/" class="btn-primary">Browse Courses</a>
                     </div>
                 `;
             }
@@ -761,7 +761,7 @@
                         <div class="empty-state-icon">❤️</div>
                         <h2>Empty Wishlist</h2>
                         <p>Add courses to your wishlist for later!</p>
-                        <a href="index.html" class="btn-primary">Explore Courses</a>
+                        <a href="/" class="btn-primary">Explore Courses</a>
                     </div>
                 `;
             }
@@ -844,7 +844,7 @@
 
         function handleLogout() {
             localStorage.removeItem('currentUser');
-            window.location.href = 'login.html';
+            window.location.href = '/login';
         }
     </script>
 </body>

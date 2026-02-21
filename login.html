@@ -495,9 +495,9 @@
                 if (result.success) {
                     const user = result.data.user;
                     if (user.role === 'admin') {
-                        window.location.href = 'admin-dashboard.html';
+                        window.location.href = '/admin-dashboard';
                     } else {
-                        window.location.href = 'user-dashboard.html';
+                        window.location.href = '/user-dashboard';
                     }
                 } else {
                     errorDiv.textContent = result.error || 'Invalid credentials';
@@ -570,9 +570,9 @@
                     setTimeout(() => {
                         const user = result.data.user;
                         if (user.role === 'admin') {
-                            window.location.href = 'admin-dashboard.html';
+                            window.location.href = '/admin-dashboard';
                         } else {
-                            window.location.href = 'user-dashboard.html';
+                            window.location.href = '/user-dashboard';
                         }
                     }, 1500);
                 } else {
@@ -594,9 +594,9 @@
             if (currentUser) {
                 const user = JSON.parse(currentUser);
                 if (user.role === 'admin') {
-                    window.location.href = 'admin-dashboard.html';
+                    window.location.href = '/admin-dashboard';
                 } else {
-                    window.location.href = 'user-dashboard.html';
+                    window.location.href = '/user-dashboard';
                 }
             }
         });
